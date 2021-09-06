@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Makemefat</string>
+    <string name="action_foods">Foods</string>
+    <string name="action_weightin">Weight In</string>
+    <string name="action_toilet">Toilet</string>
+    <string name="action_sleep">Sleep</string>
+    <string name="action_workout">Workout</string>
+    <string name="hello_weightin_string">Hello from Weight In</string>
+    <string name="hello_toilet_string">Hello from Toilet</string>
+    <string name="hello_places_string">Hello from Places</string>
+    <string name="hello_workout_string">Hello from Workout</string>
+    <string name="dialog_add_item">Add Item</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+</resources>

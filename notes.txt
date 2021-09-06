@@ -1,0 +1,4 @@
+add ability to add places
+add ability to add favourite foods/recipes
+add ability to generate menu for the day/week/month
+add ability to link favourite food with places

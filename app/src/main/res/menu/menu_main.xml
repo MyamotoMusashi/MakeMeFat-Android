@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.knifed.makemefat.MainActivity">
+    <item
+        android:id="@+id/action_foods"
+        android:orderInCategory="100"
+        android:title="@string/action_foods"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_places"
+        android:orderInCategory="100"
+        android:title="Places"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_weightin"
+        android:orderInCategory="100"
+        android:title="@string/action_weightin"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_toilet"
+        android:orderInCategory="100"
+        android:title="@string/action_toilet"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_sleep"
+        android:orderInCategory="100"
+        android:title="@string/action_sleep"
+        app:showAsAction="never"/>/>
+    <item
+        android:id="@+id/action_workout"
+        android:orderInCategory="100"
+        android:title="@string/action_workout"
+        app:showAsAction="never"/>/>
+</menu>
