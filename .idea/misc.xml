@@ -3,13 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/content_main.xml" value="0.1" />
-        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/dialog_add_food.xml" value="0.1" />
+        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/dialog_add_food.xml" value="0.22" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/dialog_add_place.xml" value="0.1" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/dialog_add_sleep.xml" value="0.1" />
+        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/dialog_add_water.xml" value="0.1" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_first.xml" value="0.1" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_foods.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_place.xml" value="0.1" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_places.xml" value="0.1" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_sleep.xml" value="0.22698320787492762" />
         <entry key="..\:/Users/SPIRE/Desktop/projects/makemefat_app/android/app/src/main/res/layout/fragment_toilet.xml" value="0.1213768115942029" />

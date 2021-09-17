@@ -5,15 +5,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.ListView;
-
-import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
-import androidx.navigation.ui.AppBarConfiguration;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
-import androidx.room.migration.Migration;
-import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.knifed.makemefat.daos.PlaceDao;
 import com.knifed.makemefat.daos.SleepDao;
@@ -30,14 +24,13 @@ import com.knifed.makemefat.fragments.SleepFragment;
 import com.knifed.makemefat.fragments.ToiletFragment;
 import com.knifed.makemefat.fragments.WeightinFragment;
 import com.knifed.makemefat.fragments.WorkoutFragment;
+import com.knifed.makemefat.utils.Utilities;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements AddItemDialogFragment.AddItemDialogListener {
-    private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
-    private ListView listView;
     private List<Water> waters;
     private List<Sleep> sleeps;
     private ArrayList<String> gogo = new ArrayList<String>();
@@ -80,15 +73,15 @@ public class MainActivity extends AppCompatActivity implements AddItemDialogFrag
             @Override
             public void onClick(View view) {
                 if (getSupportFragmentManager().findFragmentByTag("FoodsFragment") != null) {
-                    buildAndShowDialog("Add food", R.layout.dialog_add_food);
+                    Utilities.buildAndShowDialog(MainActivity.this,"Add food", R.layout.dialog_add_water);
                 }
 
                 if (getSupportFragmentManager().findFragmentByTag("SleepFragment") != null) {
-                    buildAndShowDialog("Add Sleep", R.layout.dialog_add_sleep);
+                    Utilities.buildAndShowDialog(MainActivity.this,"Add Sleep", R.layout.dialog_add_sleep);
                 }
 
                 if (getSupportFragmentManager().findFragmentByTag("PlacesFragment") != null) {
-                    buildAndShowDialog("Add Place", R.layout.dialog_add_place);
+                    Utilities.buildAndShowDialog(MainActivity.this,"Add Place", R.layout.dialog_add_place);
                 }
             }
         });
@@ -112,36 +105,22 @@ public class MainActivity extends AppCompatActivity implements AddItemDialogFrag
             case R.id.action_foods:
                 Bundle bundle = new Bundle();
                 bundle.putStringArrayList("data", gogo);
-
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, FoodsFragment.class, bundle, "FoodsFragment")
-                        .commit();
+                initializeFragmentView(FoodsFragment.class, bundle, "FoodsFragment");
                 break;
             case R.id.action_places:
                 this.placesArrayList = new ArrayList<String>();
                 for (Place place: this.placeDao.getAll()) {
                     this.placesArrayList.add(place.name);
                 }
-
                 Bundle placesBundle = new Bundle();
                 placesBundle.putStringArrayList("data", this.placesArrayList);
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, PlacesFragment.class, placesBundle, "PlacesFragment")
-                        .commit();
+                this.initializeFragmentView(PlacesFragment.class, placesBundle, "PlacesFragment");
                 break;
             case R.id.action_weightin:
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, WeightinFragment.class, null, "WeightinFragment")
-                        .commit();
+                this.initializeFragmentView(WeightinFragment.class, null, "WeightinFragment");
                 break;
             case R.id.action_toilet:
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, ToiletFragment.class, null, "ToiletFragment")
-                        .commit();
+                this.initializeFragmentView(ToiletFragment.class, null, "ToiletFragment");
                 break;
             case R.id.action_sleep:
                 this.sleeps = this.db.sleepDao().getAll();
@@ -151,14 +130,10 @@ public class MainActivity extends AppCompatActivity implements AddItemDialogFrag
                 }
                 Bundle sleepBundle = new Bundle();
                 sleepBundle.putStringArrayList("data", this.sleepArrayList);
-
-                getSupportFragmentManager().beginTransaction()
-                        .setReorderingAllowed(true)
-                        .replace(R.id.fragment_container_view, SleepFragment.class, sleepBundle, "SleepFragment")
-                        .commit();
+                this.initializeFragmentView(SleepFragment.class, sleepBundle, "SleepFragment");
                 break;
             case R.id.action_workout:
-                initializeFragmentView(WorkoutFragment.class, null, "WorkoutFragment");
+                this.initializeFragmentView(WorkoutFragment.class, null, "WorkoutFragment");
                 break;
             default:
                 break;
@@ -194,11 +169,6 @@ public class MainActivity extends AppCompatActivity implements AddItemDialogFrag
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
 
-    }
-
-    private void buildAndShowDialog(String message, int layout) {
-        AddItemDialogFragment addItemDialogFragment = new AddItemDialogFragment(message, layout);
-        addItemDialogFragment.show(getSupportFragmentManager(), "Dialog");
     }
 
     private void initializeFragmentView(Class fragmentClass, Bundle bundle, String tag) {

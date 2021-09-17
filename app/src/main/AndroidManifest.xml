@@ -20,6 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PlaceActivity"
+            android:exported="true"
+            android:label="Makemefat"
+            android:theme="@style/Theme.Makemefat.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

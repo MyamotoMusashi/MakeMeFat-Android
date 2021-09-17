@@ -10,7 +10,7 @@ import java.util.List;
 
 @Dao
 public interface PlaceDao {
-    @Query("SELECT * FROM water")
+    @Query("SELECT * FROM place")
     List<Place> getAll();
 
     @Insert
